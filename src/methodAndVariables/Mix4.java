@@ -18,7 +18,7 @@ public class Mix4 {
         Mix4[] m4a = new Mix4[20];
         int x = 0;
         //[(x < 9), (x < 20), (x < 7), (x < 19)
-        while (x<9) {
+        while (x < 5) {
             m4a[x] = new Mix4();
             m4a[x].counter = m4a[x].counter + 1;
             count = count + 1;
@@ -29,3 +29,4 @@ public class Mix4 {
     }
 
 }
+//P90的拼图题
