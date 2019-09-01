@@ -30,7 +30,7 @@ public class SimpleDotCom {
              * }
              */
             if (guess == cell) {
-                result = "hit!";
+                result = "hit";
                 numOfHits++;
                 break;
                 //这里的break是不是无论如何都不循环这个if？
@@ -39,7 +39,7 @@ public class SimpleDotCom {
         }
 
         if (numOfHits == locationCells.length) {
-            result = "kill!";
+            result = "kill";
         }
         System.out.println(result);
         return result;

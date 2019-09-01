@@ -2,13 +2,28 @@ package battleshipgame;
 
 public class SimpleDotComTestDrive {
     public static void main(String[] args) {
-        SimpleDotCom dot = new SimpleDotCom();
+        int numOfGuess = 0;
+        GameHelper helper = new GameHelper();
+        //GameHelper类尚未创建
 
-        int[] locations = {2,3,4};
-        dot.setLocationCells(locations);
+        SimpleDotCom theDotCom = new SimpleDotCom();
+        int randomNum = (int) (Math.random() * 4);
+        /**Math.random会返回一个介于0到小于1之间的数，所
+         *以这个公式会产生介于0~4之间的数值。
+         */
+        int[] locations = {randomNum, randomNum+1, randomNum+2};
+        theDotCom.setLocationCells(locations);
+        boolean isAlive = true;
 
-        String userGuess = "2";
-        //这里的2是怎么让SilpleDotCom识别到然后和数组做对比的
-        String result = dot.checkYourself(userGuess);
+        while (isAlive == true) {
+            String guess = helper.getUserInput("enter a number: ");
+            //helper.getUserInput为GameHelper的方法，尚未创建。
+            String result = theDotCom.checkYourself(guess);
+            numOfGuess++;
+            if (result.equals("kill")) {
+                isAlive = false;
+                System.out.println("You took " + numOfGuess + " guesses");
+            }
+        }
     }
 }
